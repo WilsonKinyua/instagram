@@ -77,6 +77,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
 
+REGISTRATION_OPEN=True
+
 # Application definition
 
 INSTALLED_APPS = [
