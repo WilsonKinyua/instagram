@@ -13,7 +13,7 @@ class Image(models.Model):
         User, on_delete=models.CASCADE, related_name='images')
     image = CloudinaryField('image')
     image_name = models.CharField(max_length=50)
-    image_caption = models.CharField(max_length=50)
+    image_caption = models.TextField()
     image_date = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     like_count = models.IntegerField(default=0)

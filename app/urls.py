@@ -9,8 +9,8 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('upload/add/', views.save_image, name='save.image'),
     path('profile/update/', views.update_profile, name='update.profile'),
-    # like image
     path('like/<int:id>/', views.like_image, name='like.image'),
+    path('picture/<int:id>/', views.single_image, name='single.image'),
 ]
 
 if settings.DEBUG:

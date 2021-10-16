@@ -100,7 +100,7 @@ def like_image(request, id):
     if Likes.objects.filter(image_id=id, user_id=request.user.id).exists():
         # unlike the image
         likes.delete()
-        # reduce the number of likes by 1 for the image 
+        # reduce the number of likes by 1 for the image
         image = Image.objects.get(id=id)
         # check if the image like_count is equal to 0
         if image.like_count == 0:
@@ -117,4 +117,16 @@ def like_image(request, id):
         image = Image.objects.get(id=id)
         image.like_count = image.like_count + 1
         image.save()
+        return redirect('/')
+
+
+# single image page with comments
+@login_required(login_url='/accounts/login/')
+def single_image(request, id):
+    image = Image.objects.get(id=id)
+    # check if image exists
+    if Image.objects.filter(id=id).exists():
+        comments = Comments.objects.filter(image_id=id)
+        return render(request, 'picture.html', {'image': image, 'comments': comments})
+    else:
         return redirect('/')

@@ -272,3 +272,9 @@ a:focus {
 .border-radius {
   border-radius: 50%;
 }
+
+.img-box img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
