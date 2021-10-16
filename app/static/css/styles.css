@@ -18,7 +18,7 @@ a:focus {
 }
 
 .fa {
-  color: rgba(var(--i1d,38,38,38),1);
+  color: rgba(var(--i1d, 38, 38, 38), 1);
   font-size: 15px;
 }
 
@@ -32,7 +32,7 @@ a:focus {
 .btn:hover {
   background-color: var(--main-color);
   color: #fff;
-  border-color: var(--main-color);
+  /* border-color: var(--main-color); */
 }
 
 .btn-outline-dark,
@@ -131,7 +131,7 @@ a:focus {
 } */
 
 .fa-heart {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .categories .btn {
@@ -222,15 +222,38 @@ a:focus {
 }
 
 .user-avatar {
-    width: 30px;
-    margin-right: 7px;
+  width: 30px;
+  margin-right: 7px;
 }
 
-.card-img, .card-img-top {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
+.card-img,
+.card-img-top {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .nav-item .fa {
-    font-size: 25px;
+  font-size: 25px;
+}
+
+.profile-picture {
+  width: 200px;
+}
+
+/* profile page */
+.profile .card-img-top {
+  border-radius: 50%;
+  display: block;
+  float: none;
+  height: 180px;
+  line-height: 32px;
+  margin: 0 auto;
+  width: 180px;
+  margin-top: 6px;
+}
+
+.posts .img-fluid {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
