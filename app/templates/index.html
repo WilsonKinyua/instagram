@@ -36,7 +36,7 @@
                             </div>
                         </small>
                         <a href="{% url 'single.image' image.id %}">
-                            <p class="fade-item">{{image.like_count }} Likes <br>View All 20 Comments</p>
+                            <p class="fade-item">{{image.like_count }} Likes <br>View All {{image.comment_count }} Comments</p>
                             <h6 class="">{{ image.image_caption|slice:":20" }}<small><span class="text-muted">...Read
                                         More</span></small> </h6>
                         </a>

@@ -124,9 +124,13 @@ def like_image(request, id):
 @login_required(login_url='/accounts/login/')
 def single_image(request, id):
     image = Image.objects.get(id=id)
+    # get related images to the image that is being viewed by the user and order them by the date they were created
+    related_images = Image.objects.filter(
+        user_id=image.user_id).order_by('-image_date')
+    title = image.image_name
     # check if image exists
     if Image.objects.filter(id=id).exists():
         comments = Comments.objects.filter(image_id=id)
-        return render(request, 'picture.html', {'image': image, 'comments': comments})
+        return render(request, 'picture.html', {'image': image, 'comments': comments, 'images': related_images, 'title': title})
     else:
         return redirect('/')

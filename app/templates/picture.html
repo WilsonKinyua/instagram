@@ -4,22 +4,27 @@
 <section class="blog-section">
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ image.image.url }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
                 <div class="card mb-3">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ image.image.url }}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
+
+                        <div class="col-md-12">
                             <div class="card-body">
                                 <h5 class="card-title">{{ image.image_name }}</h5>
                                 <p class="card-text">
                                     {{image.image_caption }}
                                 </p>
                                 <p class="card-text"><small class="text-muted">Last updated
-                                    {{image.image_date|timesince}} ago
-                                </small></p>
-                                
+                                        {{image.image_date|timesince}} ago
+                                    </small></p>
+
                                 <div class="d-flex justify-content-start card mb-3">
                                     <div class="img-box">
                                         <img src="https://st2.depositphotos.com/1104517/11965/v/600/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg"
@@ -55,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <p>More posts from <strong></strong></p>
+            <p class="text-capitalize">More posts from <strong>{{ image.user.username }}</strong></p>
             {% for image in images %}
             <div class="col-sm-12 col-md-3">
                 <div class="card mb-4">
@@ -88,8 +93,10 @@
                             </div>
                         </small>
                         <a href="{% url 'single.image' image.id %}">
-                            <p class="fade-item">{{image.like_count }} Likes <br>View All 20 Comments</p>
-                            <h6 class="">{{ image.image_caption }}</h6>
+                            <p class="fade-item">{{image.like_count }} Likes <br>View All {{image.comment_count }}
+                                Comments</p>
+                            <h6 class="">{{ image.image_caption|slice:":20" }}<small><span class="text-muted">...Read
+                                        More</span></small> </h6>
                         </a>
                     </div>
                 </div>
