@@ -252,8 +252,16 @@ a:focus {
   margin-top: 6px;
 }
 
+.blog-section .card-img-top {
+  height: 200px;
+}
+
 .posts .img-fluid {
   height: 50px;
   width: 50px;
+  border-radius: 50%;
+}
+
+.border-radius {
   border-radius: 50%;
 }

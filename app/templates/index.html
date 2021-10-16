@@ -6,20 +6,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
+                    {% for image in images %}
                     <div class="col-md-3">
                         <div class="card mb-4">
                             <div class="d-flex justify-content-start m-2">
                                 <div>
-                                    <img src="https://instalite.herokuapp.com/media/default.png" alt=""
-                                        class="user-avatar">
+                                    <img src="https://res.cloudinary.com/developerwilson/image/upload/v1632582461/rzfpe5avqvhfbrtkwtqg.jpg" alt=""
+                                        class="user-avatar border-radius">
                                 </div>
                                 <div class="text-center mt-1">
                                     <a href="">
-                                        <h6><small>Wilson Kinyua</small></h6>
+                                        <h6><small>{{ image.user.username }} </small></h6>
+                                        
                                     </a>
                                 </div>
                             </div>
-                            <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
+                            <img src="{{ image.image.url }}"
                                 class="card-img-top" alt="News Image">
                             <div class="card-body">
                                 <small>
@@ -38,122 +40,12 @@
                                 </small>
                                 <a href="">
                                     <p class="fade-item">4 Likes <br>View All 20 Comments</p>
-                                    <h6 class="">Man attacked by alligator in Hurricane Ida's floodwaters</h6>
+                                    <h6 class="">{{ image.image_caption }}</h6>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4">
-                            <div class="d-flex justify-content-start m-2">
-                                <div>
-                                    <img src="https://instalite.herokuapp.com/media/default.png" alt=""
-                                        class="user-avatar">
-                                </div>
-                                <div class="text-center mt-1">
-                                    <a href="">
-                                        <h6><small>Wilson Kinyua</small></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                                class="card-img-top" alt="News Image">
-                            <div class="card-body">
-                                <small>
-                                    <div class="d-flex justify-content-start">
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-heart"></i></a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-comment"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </small>
-                                <a href="">
-                                    <p class="fade-item">4 Likes <br>View All 20 Comments</p>
-                                    <h6 class="">Man attacked by alligator in Hurricane Ida's floodwaters</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4">
-                            <div class="d-flex justify-content-start m-2">
-                                <div>
-                                    <img src="https://instalite.herokuapp.com/media/default.png" alt=""
-                                        class="user-avatar">
-                                </div>
-                                <div class="text-center mt-1">
-                                    <a href="">
-                                        <h6><small>Wilson Kinyua</small></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                                class="card-img-top" alt="News Image">
-                            <div class="card-body">
-                                <small>
-                                    <div class="d-flex justify-content-start">
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-heart"></i></a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-comment"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </small>
-                                <a href="">
-                                    <p class="fade-item">4 Likes <br>View All 20 Comments</p>
-                                    <h6 class="">Man attacked by alligator in Hurricane Ida's floodwaters</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4">
-                            <div class="d-flex justify-content-start m-2">
-                                <div>
-                                    <img src="https://instalite.herokuapp.com/media/default.png" alt=""
-                                        class="user-avatar">
-                                </div>
-                                <div class="text-center mt-1">
-                                    <a href="">
-                                        <h6><small>Wilson Kinyua</small></h6>
-                                    </a>
-                                </div>
-                            </div>
-                            <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                                class="card-img-top" alt="News Image">
-                            <div class="card-body">
-                                <small>
-                                    <div class="d-flex justify-content-start">
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-heart"></i></a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p>
-                                               <a href=""> <i class="far fa-comment"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </small>
-                                <a href="">
-                                    <p class="fade-item">4 Likes <br>View All 20 Comments</p>
-                                    <h6 class="">Man attacked by alligator in Hurricane Ida's floodwaters</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 

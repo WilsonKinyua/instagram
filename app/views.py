@@ -9,7 +9,9 @@ import cloudinary.api
 
 @login_required(login_url='/accounts/login/')
 def index(request):
-    return render(request, 'index.html')
+    # get all the images from the database
+    images = Image.objects.all()
+    return render(request, 'index.html', {'images': images})
 
 
 # profile page
