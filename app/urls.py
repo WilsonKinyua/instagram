@@ -12,6 +12,7 @@ urlpatterns = [
     path('like/<int:id>/', views.like_image, name='like.image'),
     path('picture/<int:id>/', views.single_image, name='single.image'),
     path('comment/add', views.save_comment, name='comment.add'),
+    path('user/<int:id>/', views.user_profile, name='user.profile'),
 ]
 
 if settings.DEBUG:

@@ -130,7 +130,8 @@ def single_image(request, id):
     title = image.image_name
     # check if image exists
     if Image.objects.filter(id=id).exists():
-        comments = Comments.objects.filter(image_id=id) # get all the comments for the image
+        # get all the comments for the image
+        comments = Comments.objects.filter(image_id=id)
         return render(request, 'picture.html', {'image': image, 'comments': comments, 'images': related_images, 'title': title})
     else:
         return redirect('/')
@@ -152,3 +153,39 @@ def save_comment(request):
         return redirect('/picture/' + str(image_id))
     else:
         return redirect('/')
+
+
+# user profile page with images
+@login_required(login_url='/accounts/login/')
+def user_profile(request, id):
+    # check if user exists
+    if User.objects.filter(id=id).exists():
+        # get the user
+        user = User.objects.get(id=id)
+        # get all the images for the user
+        images = Image.objects.filter(user_id=id)
+        # get the profile of the user
+        profile = Profile.objects.filter(user_id=id).first()
+        return render(request, 'user-profile.html', {'images': images, 'profile': profile, 'user': user})
+    else:
+        return redirect('/')
+
+    # # get the profile of the user that is being viewed
+    # profile = Profile.objects.filter(user_id=id).first()
+    # # get all the images of the user that is being viewed
+    # images = Image.objects.filter(user_id=id)
+    # # get all the comments of the user that is being viewed
+    # comments = Comments.objects.filter(user_id=id)
+    # # get all the likes of the user that is being viewed
+    # likes = Likes.objects.filter(user_id=id)
+    # # get the number of likes of the user that is being viewed
+    # likes_count = likes.count()
+    # # get the number of comments of the user that is being viewed
+    # comments_count = comments.count()
+    # # get the number of images of the user that is being viewed
+    # images_count = images.count()
+    # return render(request, 'user-profile.html', {'profile': profile, 'images': images, 'comments': comments,
+    #                                              'likes': likes, 'likes_count': likes_count,
+    #                                              'comments_count': comments_count, 'images_count': images_count})
+    # else:
+    #     return redirect('/')
