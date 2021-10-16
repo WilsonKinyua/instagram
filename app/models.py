@@ -16,8 +16,8 @@ class Image(models.Model):
     image_caption = models.CharField(max_length=50)
     image_date = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    # likes = models.IntegerField(default=0, related_name='likes')
-    # comments = models.IntegerField(default=0, related_name='comments')
+    like_count = models.IntegerField(default=0)
+    comment_count = models.IntegerField(default=0)
 
     # get images by user
     @classmethod
@@ -83,7 +83,7 @@ class Profile(models.Model):
 # likes model
 class Likes(models.Model):
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
-    likes = models.IntegerField(default=0)
+    # likes = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -28,7 +28,7 @@
                                     <div class="d-flex justify-content-start">
                                         <div>
                                             <p>
-                                               <a href=""> <i class="far fa-heart"></i></a>
+                                               <a href="{% url 'like.image' image.id %}"> <i class="far fa-heart"></i></a>
                                             </p>
                                         </div>
                                         <div>
@@ -39,7 +39,7 @@
                                     </div>
                                 </small>
                                 <a href="">
-                                    <p class="fade-item">4 Likes <br>View All 20 Comments</p>
+                                    <p class="fade-item">{{image.like_count }} Likes <br>View All 20 Comments</p>
                                     <h6 class="">{{ image.image_caption }}</h6>
                                 </a>
                             </div>
