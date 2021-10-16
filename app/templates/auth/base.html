@@ -1,0 +1,35 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Instagram Application - Account </title>
+    <!-- favico -->
+    <link rel="shortcut icon" href="https://developerwilson.com/assets/images/ico/favicon.png">
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    {% endblock %}
+
+</head>
+
+<body>
+    <!-- content -->
+    {% block content %}
+
+    {%endblock%}
+
+    
+
+    <!-- scripts -->
+    {% block scripts %}
+    {% bootstrap_javascript %}
+    {% endblock %}
+
+</body>
+
+</html>
