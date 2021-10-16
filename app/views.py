@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import *
 import cloudinary
@@ -31,7 +31,7 @@ def save_image(request):
         image = Image(image_name=image_name, image_caption=image_caption, image=image_url,
                       profile_id=request.POST['user_id'], user_id=request.POST['user_id'])
         image.save_image()
-        # redirect with success message
+        # return redirect('/profile', {'success': 'Image Uploaded Successfully'})
         return render(request, 'profile.html', {'success': 'Image Uploaded Successfully'})
     else:
-        return render(request, 'profile.html')
+        return render(request, 'profile.html', {'danger': 'Image Upload Failed'})
