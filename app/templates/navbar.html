@@ -13,30 +13,15 @@
             </ul>
             <ul class="navbar-nav nav-right">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Business</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle btn btn-outline-danger" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        John
+                    <a class="nav-link active" href="/">
+                        <i class="fa fa-home"></i>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-dark" href="">My account</a></li>
-                        <li><a class="dropdown-item text-dark" href="">Logout</a></li>
-                    </ul>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="btn color-primary btn-secondary" href="">sign in</a>
-                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile'%}">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
