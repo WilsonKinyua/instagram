@@ -179,7 +179,7 @@
 
                 {% for image in images %}
                 <div class="col-md-4">
-                    <a href="">
+                    <a href="{% url 'single.image' image.id %}">
                         <div class="card mb-4">
                             <img src="{{ image.image.url }}" class="card-img-tops" alt="Image">
                         </div>

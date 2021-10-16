@@ -252,13 +252,13 @@ a:focus {
   margin-top: 6px;
 }
 
-.blog-section .card-img-top {
+.blog-section .card-img-top,.card-img-tops {
   height: 200px;
 }
 
 /* on small device change height of the image */
 @media (max-width: 767px) {
-  .blog-section .card-img-top {
+  .blog-section .card-img-top, .card-img-tops {
     height: 100%;
   }
 }
