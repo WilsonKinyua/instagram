@@ -170,38 +170,25 @@
                         </div>
                     </div>
                 </div>
+
+
+                {% for image in images %}
                 <div class="col-md-4">
                     <a href="">
                         <div class="card mb-4">
-                            <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                                class="card-img-tops" alt="News Image">
+                            <img src="{{ image.image.url }}" class="card-img-tops" alt="Image">
                         </div>
                     </a>
                 </div>
+                {% empty %}
+                <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                            class="card-img-tops" alt="News Image">
+                    <div class="alert alert-info" role="alert">
+                        No images!
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                            class="card-img-tops" alt="News Image">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                            class="card-img-tops" alt="News Image">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="https://phantom-elmundo.unidadeditorial.es/090a5e412e827f04c3801f923d0426d3/crop/0x0/3072x2048/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/09/16312154726086.jpg"
-                            class="card-img-tops" alt="News Image">
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
 
         </div>

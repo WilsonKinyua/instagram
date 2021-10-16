@@ -15,7 +15,11 @@ def index(request):
 # profile page
 @login_required(login_url='/accounts/login/')
 def profile(request):
-    return render(request, 'profile.html')
+    current_user = request.user
+    # get images for the current logged in user
+    images = Image.objects.filter(user_id=current_user.id)
+    return render(request, 'profile.html', {"images": images})
+    # return render(request, 'profile.html')
 
 
 # save image  with image name,image caption and upload image to cloudinary
