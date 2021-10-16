@@ -256,6 +256,13 @@ a:focus {
   height: 200px;
 }
 
+/* on small device change height of the image */
+@media (max-width: 767px) {
+  .blog-section .card-img-top {
+    height: 100%;
+  }
+}
+
 .posts .img-fluid {
   height: 50px;
   width: 50px;
