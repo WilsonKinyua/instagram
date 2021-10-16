@@ -130,7 +130,25 @@ def single_image(request, id):
     title = image.image_name
     # check if image exists
     if Image.objects.filter(id=id).exists():
-        comments = Comments.objects.filter(image_id=id)
+        comments = Comments.objects.filter(image_id=id) # get all the comments for the image
         return render(request, 'picture.html', {'image': image, 'comments': comments, 'images': related_images, 'title': title})
+    else:
+        return redirect('/')
+
+
+# save comment
+@login_required(login_url='/accounts/login/')
+def save_comment(request):
+    if request.method == 'POST':
+        comment = request.POST['comment']
+        image_id = request.POST['image_id']
+        image = Image.objects.get(id=image_id)
+        user = request.user
+        comment = Comments(comment=comment, image_id=image_id, user_id=user.id)
+        comment.save_comment()
+        # increase the number of comments by 1 for the image
+        image.comment_count = image.comment_count + 1
+        image.save()
+        return redirect('/picture/' + str(image_id))
     else:
         return redirect('/')

@@ -24,32 +24,37 @@
                                 <p class="card-text"><small class="text-muted">Last updated
                                         {{image.image_date|timesince}} ago
                                     </small></p>
-
+                                {% if comments %}
+                                {% for comment in comments %}
                                 <div class="d-flex justify-content-start card mb-3">
                                     <div class="img-box">
                                         <img src="https://st2.depositphotos.com/1104517/11965/v/600/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg"
                                             alt="">
                                     </div>
                                     <div class="m-2">
-                                        <h6>Mzee mzima</h6>
+                                        <h6>{{ comment.user.username }}</h6>
                                         <h6> <i class="fa fa-clock"></i> <span>
-                                                {{ image.image_date }}
+                                                {{ comment.comment_date }}
                                             </span>
                                         </h6>
                                     </div>
                                     <p class="m-2">
-                                        Lorem ipsum dolor sit amet.
+                                        {{comment.comment }}
                                     </p>
                                 </div>
+                                {% endfor %}
+                                {% endif %}
 
                                 <!-- comment form -->
                                 <div class="card">
                                     <div class="card-body">
-                                        <form>
+                                        <form action="{% url 'comment.add' %}" method="post">
+                                            {% csrf_token %}
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1">Comment</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                    rows="3"></textarea>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                    name="comment" required></textarea>
+                                                <input type="hidden" name="image_id" value="{{ image.id }}">
                                             </div>
                                             <button type="submit" class="btn mt-4 floar-right">Add Comment</button>
                                         </form>
@@ -60,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-capitalize">More posts from <strong>{{ image.user.username }}</strong></p>
+            <p class="text-capitalize mt-4">More posts from <strong>{{ image.user.username }}</strong></p>
             {% for image in images %}
             <div class="col-sm-12 col-md-3">
                 <div class="card mb-4">
@@ -87,7 +92,7 @@
                                 </div>
                                 <div>
                                     <p>
-                                        <a href=""> <i class="far fa-comment"></i></a>
+                                        <a href="{% url 'single.image' image.id %}"> <i class="far fa-comment"></i></a>
                                     </p>
                                 </div>
                             </div>
