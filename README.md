@@ -4,7 +4,7 @@
 
 ## Description
 
-Instagram is a simple photo web application to showcase beautiful pictures and designs. Users get to view photos updated by other users. They can also click on a photo and view more details about it. Users can also leave comments based on selected images.
+Instagram is a simple photo web application to showcase beautiful pictures and designs. Users get to view photos updated by other users. They can also click on a photo and view more details about it. Users can also leave comments or even like based on selected images.
 
 ## Setup Requirements
 
@@ -79,9 +79,19 @@ The following languages have been used on this project:
 
 ## Setup/Installation Requirements
 
-- Live link to view the project <a target="_blank" href="https://insta-wk.herokuapp.com/">View Gallery</a>
+- Live link to view the project <a target="_blank" href="https://insta-wk.herokuapp.com/">View Instagram</a>
 
+## Some Screenshots
 
+  <img src="./screenshots/1.png" alt="screenshot" />
+
+  <img src="./screenshots/2.png" alt="screenshot" />
+
+  <img src="./screenshots/3.png" alt="screenshot" />
+
+  <img src="./screenshots/4.png" alt="screenshot" />
+
+  <img src="./screenshots/5.png" alt="screenshot" />
 
 ## Known Bugs
 
