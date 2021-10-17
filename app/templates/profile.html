@@ -46,14 +46,14 @@
                         </p>
                         <h6>Joined on: <span class="badge rounded-pill bg-secondary text-white">
                                 {{ user.date_joined|date }} </span></h6>
-                        <div class="d-flex justify-content-evenly">
+                        <!-- <div class="d-flex justify-content-evenly">
                             <div>
                                 <p class=""> <i class="fa fa-user"></i> 10 followers</p>
                             </div>
                             <div>
                                 <p class=""> <i class="fa fa-user"></i> 11 followers</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row mt-3 mb-3">
@@ -73,7 +73,8 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{% url 'update.profile' %}" method="POST" enctype="multipart/form-data">
+                                            <form action="{% url 'update.profile' %}" method="POST"
+                                                enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 <div class="form-group mb-3">
                                                     <label for="name">First Name</label>
@@ -197,29 +198,20 @@
             </div>
 
         </div>
-        <div class="col-md-12 mt-4 mb-4">
-            <!-- my pitches -->
+        <!-- <div class="col-md-12 mt-4 mb-4">
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <div>
                             <h4 class="card-title">Comments</h4>
                         </div>
-                        <!-- <div>
-                                <button type="button" class="btn btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
-                                    <i class="fa fa-plus"></i> Add a Post
-                                </button>
-                            </div> -->
                     </div>
                 </div>
                 <div class="card-body">
-                    <!-- includes posts.html from templates folder -->
-
                 </div>
 
             </div>
-        </div>
+        </div> -->
     </div>
     </div>
 </section>
