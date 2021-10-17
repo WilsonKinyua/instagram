@@ -76,7 +76,6 @@ The following languages have been used on this project:
 - Django
 - PostgreSQL
 
-
 ## Setup/Installation Requirements
 
 - Live link to view the project <a target="_blank" href="https://insta-wk.herokuapp.com/">View Instagram</a>
