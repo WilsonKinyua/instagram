@@ -252,14 +252,21 @@ a:focus {
   margin-top: 6px;
 }
 
-.blog-section .card-img-top,.card-img-tops {
+.blog-section .card-img-top,
+.card-img-tops {
   height: 200px;
 }
-
+.search-form {
+  margin-left: 300px;
+}
 /* on small device change height of the image */
 @media (max-width: 767px) {
-  .blog-section .card-img-top, .card-img-tops {
+  .blog-section .card-img-top,
+  .card-img-tops {
     height: 100%;
+  }
+  .search-form {
+    margin-left: 0px;
   }
 }
 

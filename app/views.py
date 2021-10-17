@@ -170,22 +170,17 @@ def user_profile(request, id):
     else:
         return redirect('/')
 
-    # # get the profile of the user that is being viewed
-    # profile = Profile.objects.filter(user_id=id).first()
-    # # get all the images of the user that is being viewed
-    # images = Image.objects.filter(user_id=id)
-    # # get all the comments of the user that is being viewed
-    # comments = Comments.objects.filter(user_id=id)
-    # # get all the likes of the user that is being viewed
-    # likes = Likes.objects.filter(user_id=id)
-    # # get the number of likes of the user that is being viewed
-    # likes_count = likes.count()
-    # # get the number of comments of the user that is being viewed
-    # comments_count = comments.count()
-    # # get the number of images of the user that is being viewed
-    # images_count = images.count()
-    # return render(request, 'user-profile.html', {'profile': profile, 'images': images, 'comments': comments,
-    #                                              'likes': likes, 'likes_count': likes_count,
-    #                                              'comments_count': comments_count, 'images_count': images_count})
-    # else:
-    #     return redirect('/')
+
+# search for images
+@login_required(login_url='/accounts/login/')
+def search_images(request):
+    if 'search' in request.GET and request.GET['search']:
+        search_term = request.GET.get('search').lower()
+        images = Image.search_by_image_name(search_term)
+        message = f'{search_term}'
+        title = message
+
+        return render(request, 'search.html', {'success': message, 'images': images})
+    else:
+        message = 'You havent searched for any term'
+        return render(request, 'search.html', {'danger': message})

@@ -105,11 +105,10 @@ class Comments(models.Model):
 
 
 
-
 # follow model
-class Follow(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+# class Follow(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.user.username
+#     def __str__(self):
+#         return self.user.username

@@ -10,7 +10,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="container-fluid search-form text-center">
+                    <form class="d-flex" action="{% url 'search.images' %}">
+                        <input class="form-control me-2" type="search" name="search" placeholder="Search Image name....." aria-label="Search">
+                    </form>
+                </div>
             </ul>
+
             <ul class="navbar-nav nav-right">
                 <li class="nav-item">
                     <a class="nav-link active" href="/">

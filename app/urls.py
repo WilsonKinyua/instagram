@@ -13,6 +13,7 @@ urlpatterns = [
     path('picture/<int:id>/', views.single_image, name='single.image'),
     path('comment/add', views.save_comment, name='comment.add'),
     path('user/<int:id>/', views.user_profile, name='user.profile'),
+    path('search/', views.search_images, name='search.images'),
 ]
 
 if settings.DEBUG:
