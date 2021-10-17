@@ -18,35 +18,13 @@
             {% csrf_token %}
             {% bootstrap_form form %}
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+              <input type="submit" class="btn btn-sm" value="Create Account">
             </div>
-
             <input type="hidden" name="next" value="{{next}}">
-
           </form>
+          <p class="mt-5">Already Have an Account, <a href="/accounts/login/" class="text-primary">Login</a></p>
         </div>
       </div>
-      <!-- <div class="panel panel-default">
-
-        <div class="panel-heading">
-          <h3 class="text-center">Sign Up</h3>
-        </div>
-        <div class="panel-body">
-
-          <form  action="/accounts/register/" method="post">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-            </div>
-
-            <input type="hidden" name="next" value="{{next}}">
-
-          </form>
-
-        </div>
-
-      </div> -->
 
     </div>
     <!-- empty div -->

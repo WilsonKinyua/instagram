@@ -285,3 +285,7 @@ a:focus {
   height: 50px;
   width: 50px;
 }
+
+.form-text {
+  display: none;
+}
